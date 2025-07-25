@@ -45,7 +45,7 @@ export const ProtectedRoute = () => {
   }, []);
 
   if (isAuth === null) {
-    return <div className="loader">Загрузка...</div>;
+    return <div className="loader">Load...</div>;
   }
 
   if (!isAuth) {
