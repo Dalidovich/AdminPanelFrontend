@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://localhost:7049';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://localhost:7049';
 
 export const POST_ENDPOINT_AUTHENTICATE = '/Auth/authenticate'
 export const POST_ENDPOINT_REGISTRATION = '/Auth/registration'
