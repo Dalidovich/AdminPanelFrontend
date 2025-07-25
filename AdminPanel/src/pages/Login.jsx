@@ -19,7 +19,6 @@ export const LoginPage = () => {
     try {
       const loginResponse = await authenticate({ email, password });
       const data = await loginResponse.json()
-      console.log(data)
       setAuthData(data)
       navigate(FRONT_ENDPOINT_ACCOUNTS);
     }

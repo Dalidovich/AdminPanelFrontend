@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   server: {
-    port: process.env.PORT || 4173, 
+    port: process.env.PORT || 5173, 
     host: '0.0.0.0',
   },
   preview: {

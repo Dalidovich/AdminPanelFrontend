@@ -20,7 +20,6 @@ export const RegistrationPage = () => {
     try {
       const registrationResponse = await registration({ name, email, password });
       const data = await registrationResponse.json()
-      console.log(data)
       setAuthData(data)
       navigate(FRONT_ENDPOINT_ACCOUNTS);
     }

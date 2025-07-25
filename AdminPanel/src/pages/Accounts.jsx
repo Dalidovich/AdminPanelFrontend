@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { deleteAccounts, getAccounts, updateAccountsStatus, updateLastActivityAccount } from '../utils/api/account';
 import {removeAuthData} from '../utils/ControlAuthData'
 import { getCookie } from '../utils/Cookies';
+import { formateLastActivityDate } from '../utils/DateFormater'
 
 import {
   FRONT_ENDPOINT_LOGIN
@@ -161,6 +162,7 @@ export const AccountsPage = () => {
                   </th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>LastActivity</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -177,6 +179,7 @@ export const AccountsPage = () => {
                     </td>
                     <td>{account.name}</td>
                     <td>{account.email}</td>
+                    <td>{formateLastActivityDate(account.lastActivity)}</td>
                     <td>
                       <span className={`status-indicator ${account.status === 0 ? 'bi bi-check-circle-fill me-1 text-success' : 'bi bi-slash-circle-fill me-1 text-danger'}`}>
                         {account.status === 0 ? 'Active' : 'Block'}
