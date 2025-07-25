@@ -4,8 +4,11 @@ import path from 'path';
 
 export default defineConfig({
   server: {
-    port: process.env.PORT || 4173,  // Порт по умолчанию для preview, если не указано в окружении
-    host: '0.0.0.0',  // Делаем сервер доступным для внешних подключений
+    port: process.env.PORT || 4173, 
+    host: '0.0.0.0',
+  },
+  preview: {
+    allowedHosts: ['adminpanelfrontend-2xqk.onrender.com'],  
   },
   plugins: [react()],
   resolve: {
