@@ -22,7 +22,7 @@ export const AccountsPage = () => {
       try {
         const token = localStorage.getItem('jwtToken');
         const accountsResponse = await getAccounts(token)
-        if(accountsResponse.status===401){
+        if(accountsResponse.status!=200){
           removeAuthData();
           navigate(FRONT_ENDPOINT_LOGIN)
         }

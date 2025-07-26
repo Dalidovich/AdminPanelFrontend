@@ -48,21 +48,6 @@ export const updateAccountsStatus = async (token: string, UpdateAccountStatusDTO
   return response;
 };
 
-export const isValidAccount = async (token: string, id: string): Promise<Response> => {
-    const url = new URL(`${API_BASE_URL}${ENDPOINT_ACCOUNT_VALID}/${id}`);
-
-    const response = await fetch(url.toString(), {
-        method: "GET",
-        credentials: 'include',
-        headers: { 
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        }
-    });
-
-  return response;
-};
-
 export const updateLastActivityAccount = async (token: string, id: string): Promise<Response> => {
     const url = new URL(`${API_BASE_URL}${ENDPOINT_ACCOUNT}/${id}`);
     const now = new Date();
